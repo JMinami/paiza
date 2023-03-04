@@ -5,19 +5,18 @@
 using namespace std;
 
 int main(){
+  int x,y;
+  cin >> x >> y;
   vector<int> s(10);
-  for(int i=0; i<10; i++){
+  for (int i=0; i<10; i++){
     int tmp;
     cin >> tmp;
-    int counter = 0;
-    if (tmp%2==0){
-      counter++;
-    }
+    int counter = tmp%2==0 ? 1 : 0;
     if (i==0){
       s[i] += counter;
       continue;
     }
     s[i] = s[i-1] + counter;
   }
-  cout << s[6] - s[1] << endl;
+  cout << s[y] - s[x-1] << endl;
 }

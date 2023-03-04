@@ -5,19 +5,16 @@
 using namespace std;
 
 int main(){
-  vector<int> s(10);
-  for(int i=0; i<10; i++){
-    int tmp;
-    cin >> tmp;
-    int counter = 0;
-    if (tmp%2==0){
-      counter++;
-    }
+  string str;
+  cin >> str;
+  vector<int> s(str.length());
+  for(int i=0; i < str.length(); i++){
+    int counter = str[i]=='b' ? 1 : 0;
     if (i==0){
       s[i] += counter;
       continue;
     }
     s[i] = s[i-1] + counter;
   }
-  cout << s[6] - s[1] << endl;
+  cout << s[8]-s[2] << endl;
 }
